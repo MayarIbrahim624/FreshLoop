@@ -99,3 +99,33 @@ FreshLoop/
 ## Practical Impact
 
 FreshLoop encourages better household food management by helping users monitor expiry dates, track remaining quantities, and make use of food before it goes to waste.
+
+## Problem and Solution
+
+Household food waste can occur when people forget what food they have, overlook expiry dates, or do not know which items should be used first.
+
+FreshLoop helps users organize food items, track quantities and expiry dates, receive reminders, and find practical ideas for using suitable food before it is wasted.
+
+### How FreshLoop addresses the problem
+
+- **Food inventory:** records food names, categories, quantities, and expiry dates.
+- **Expiry reminders:** highlights expired items and items approaching expiry.
+- **Smart Rescue Score:** uses transparent date-based rules to prioritize non-expired food.
+- **Partial consumption:** tracks the remaining quantity when only part of an item is used.
+- **Food-use suggestions:** provides ideas based on food names and categories.
+- **Safety Review:** keeps expired food separate from normal consumption recommendations.
+
+For the detailed problem-to-feature mapping, user journey, expected impact, and technical limitations, see [`docs/problem-alignment.md`](docs/problem-alignment.md).
+
+## Automated Testing
+
+FreshLoop includes browser-based tests written with Playwright. They cover core user flows such as adding food, updating quantities, expiry reminders, expired-food safety handling, and saving inventory across page reloads.
+
+To install dependencies and run the tests:
+
+```bash
+npm install
+npx playwright install chromium
+npm test
+```
+
