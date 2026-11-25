@@ -1,0 +1,14 @@
+{
+  "name": "freshloop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser-based food inventory and household food waste reduction assistant",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1"
+  }
+}
