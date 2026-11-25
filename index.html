@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FreshLoop · Use it before you lose it</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">🌿</div>
+      <div><h1>FreshLoop</h1><div class="tag">Use it before you lose it.</div></div>
+    </div>
+    <div class="head-actions">
+      <button class="btn" id="planBtn">📋 Copy rescue plan</button>
+      <button class="btn" id="clearBtn">Reset all</button>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="card stat"><div class="num" id="sTotal">0</div><div class="lbl">Items tracked</div></div>
+    <div class="card stat crit"><div class="num" id="sUrgent">0</div><div class="lbl">Need attention now</div></div>
+    <div class="card stat good"><div class="num" id="sSaved">0</div><div class="lbl">Rescued from the bin</div></div>
+    <div class="card stat"><div class="num" id="sRate">–</div><div class="lbl">Waste-free rate</div></div>
+  </section>
+
+  <div class="grid">
+    <aside class="side">
+      <div class="card">
+        <h2>➕ Add food</h2>
+        <form id="form">
+          <label for="name">Food name</label>
+          <input id="name" placeholder="e.g. Bananas" required maxlength="40" autocomplete="off">
+
+          <div class="quantity-fields">
+            <div>
+              <label for="quantity">Quantity</label>
+              <input type="number" id="quantity" min="0.01" step="any" value="1" required>
+            </div>
+            <div>
+              <label for="unit">Unit</label>
+              <select id="unit" required>
+                <option value="pieces">Pieces</option>
+                <option value="packs">Packs</option>
+                <option value="bottles">Bottles</option>
+                <option value="containers">Containers</option>
+                <option value="kg">Kg</option>
+                <option value="g">Grams (g)</option>
+                <option value="L">Liters (L)</option>
+                <option value="ml">Milliliters (ml)</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="cat">Category</label>
+          <select id="cat"></select>
+
+          <label for="exp">Expiry date</label>
+          <input type="date" id="exp" required>
+          <div class="chips" id="quick">
+            <button type="button" class="chip" data-d="0">Today</button>
+            <button type="button" class="chip" data-d="1">Tomorrow</button>
+            <button type="button" class="chip" data-d="3">+3 days</button>
+            <button type="button" class="chip" data-d="7">+1 week</button>
+          </div>
+          <button class="btn primary" type="submit">Add to FreshLoop</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>🧮 Smart Rescue Score</h2>
+        <ul class="legend">
+          <li><span class="dot" style="background:var(--crit)"></span>Expired — Safety review<b>Review</b></li>
+          <li><span class="dot" style="background:var(--crit)"></span>Expires today<b>90</b></li>
+          <li><span class="dot" style="background:var(--high)"></span>Within 2 days<b>75</b></li>
+          <li><span class="dot" style="background:var(--med)"></span>Within 5 days<b>50</b></li>
+          <li><span class="dot" style="background:var(--fresh)"></span>Later<b>20</b></li>
+        </ul>
+        <p class="note">A transparent rule-based system: score from days left, ideas from category and food keywords. No black-box AI, so every suggestion is explainable. Expired food is flagged separately for safety review.</p>
+      </div>
+    </aside>
+
+    <main>
+      <section class="card reminders" id="reminders" aria-live="polite" hidden>
+        <div class="reminder-heading">
+          <h2>🔔 Smart Expiry Reminders</h2>
+          <span class="reminder-count" id="reminderCount">0</span>
+        </div>
+        <div class="reminder-list" id="reminderList"></div>
+      </section>
+
+      <section class="card rescue" id="rescue"></section>
+
+      <div class="toolbar">
+        <input class="search" id="search" placeholder="🔍 Search your food…">
+        <div class="filters" id="filters">
+          <button class="chip on" data-f="all">All</button>
+          <button class="chip" data-f="urgent">Urgent</button>
+          <button class="chip" data-f="soon">Soon</button>
+          <button class="chip" data-f="fresh">Fresh</button>
+        </div>
+      </div>
+      <div class="items" id="items"></div>
+    </main>
+  </div>
+</div>
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
