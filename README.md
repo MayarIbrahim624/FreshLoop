@@ -81,7 +81,6 @@ FreshLoop/
 ```
 
 ## Important Notes
-
 - Expiry dates and quantities are entered manually by users.
 - Data is stored locally in the browser and is not synchronized online.
 - Expiry reminders appear inside the application
