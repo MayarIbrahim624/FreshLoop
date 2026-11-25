@@ -80,22 +80,11 @@ FreshLoop/
 └── script.js
 ```
 
-## How to Run
-
-1. Download or clone the repository.
-2. Open the project folder.
-3. Open `index.html` in a modern web browser.
-4. Start adding your food items.
-
-No installation or build process is required.
-
 ## Important Notes
 
-- FreshLoop uses a rule-based system, not machine learning or an external AI API.
 - Expiry dates and quantities are entered manually by users.
-- The application cannot determine whether food is safe to eat.
 - Data is stored locally in the browser and is not synchronized online.
-- Expiry reminders appear inside the application; browser push notifications are not included.
+- Expiry reminders appear inside the application
 
 ## Practical Impact
 
